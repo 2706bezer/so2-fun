@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Standoff 2 - Фан сайт</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1d1d1d;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #272727;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      color: #ffcc00;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+    }
+    .tab {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .gallery img {
+      width: 300px;
+      margin: 10px;
+      border: 2px solid #444;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #ffcc00;
+      color: black;
+      font-weight: bold;
+    }
+    .banner {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border: 2px solid #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Standoff 2 - Фан сайт</h1>
+    <nav>
+      <a onclick="showTab('home')">Главная</a>
+      <a onclick="showTab('gallery')">Галерея</a>
+      <a onclick="showTab('register')">Регистрация</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Главная -->
+    <section id="home" class="tab active">
+      <h2>О игре</h2>
+      <p>Standoff 2 — это динамичный шутер от первого лица на мобильных устройствах. Здесь каждый может проявить свою реакцию и тактику!</p>
+      <img src="https://via.placeholder.com/800x300?text=Standoff+2+Banner" alt="Standoff 2 Banner" class="banner">
+    </section>
+
+    <!-- Галерея -->
+    <section id="gallery" class="tab">
+      <h2>Галерея</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/300x200?text=Скриншот+1" alt="Скриншот 1">
+        <img src="https://via.placeholder.com/300x200?text=Скриншот+2" alt="Скриншот 2">
+        <img src="https://via.placeholder.com/300x200?text=Скриншот+3" alt="Скриншот 3">
+      </div>
+    </section>
+
+    <!-- Регистрация -->
+    <section id="register" class="tab">
+      <h2>Регистрация</h2>
+      <form action="#" method="POST">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Зарегистрироваться</button>
+      </form>
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding: 20px; background: #272727;">
+    <p>&copy; 2025 Фан сайт Standoff 2</p>
+  </footer>
+
+  <script>
+    function showTab(id) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
